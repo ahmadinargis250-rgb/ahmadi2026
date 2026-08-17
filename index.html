@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nargis Ahmadi — Software Engineer</title>
-<meta name="description" content="Nargis Ahmadi — Software Engineer & Full-Stack Developer. Full-stack web applications, redesigns, and AI integration including AI voice agents.">
+<title>Nargis Ahmadi — Software Developer</title>
+<meta name="description" content="Nargis Ahmadi — Software Developer specializing in full-stack web applications and AI integration.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -230,39 +230,77 @@
   }
   .hero-grid{
     display:grid;
-    grid-template-columns:1.15fr 0.85fr;
-    gap:50px;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
     align-items:center;
     width:100%;
   }
-  .hero-eyebrow{margin-bottom:26px;}
+  .hero-left{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+  }
+  .hero-eyebrow{margin-bottom:0;}
   .hero h1{
-    font-size:clamp(52px, 7.2vw, 96px);
+    font-size:clamp(48px, 8vw, 92px);
     letter-spacing:-0.02em;
+    line-height:1.05;
+  }
+  .hero h1 .accent-word{
+    color:var(--accent);
   }
   .hero .role-line{
-    font-family:'Space Grotesk', sans-serif;
-    font-weight:600;
-    font-size:clamp(16px, 2vw, 22px);
-    color:var(--ink-soft);
-    margin-top:18px;
-    letter-spacing:0.01em;
+    font-family:'Inter', sans-serif;
+    font-weight:500;
+    font-size:18px;
+    color:var(--ink);
+    margin-top:0;
+    letter-spacing:0;
   }
-  .hero .role-line .cursor{
-    display:inline-block;
-    width:2px;
-    margin-left:2px;
-    background:var(--accent);
-    animation:blink 1s steps(1) infinite;
-  }
-  @keyframes blink{50%{opacity:0;}}
   .hero-tagline{
-    margin-top:26px;
-    font-size:16px;
+    margin-top:8px;
+    font-size:15px;
     color:var(--ink-soft);
-    max-width:460px;
-    line-height:1.75;
+    max-width:520px;
+    line-height:1.8;
   }
+  .hero-right{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .hero-profile-frame{
+    position:relative;
+    width:320px;
+    height:360px;
+    border-radius:20px;
+    overflow:hidden;
+    border:1px solid var(--card-border);
+    background:var(--bg-elevated);
+  }
+  .hero-profile-frame img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .stat-badge{
+    position:absolute;
+    background:var(--card);
+    border:1px solid var(--card-border);
+    border-radius:12px;
+    padding:12px 16px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink);
+    backdrop-filter:blur(10px);
+  }
+  .badge-1{ top:20px; right:-12px; }
+  .badge-2{ bottom:40px; left:-12px; }
+  .badge-3{ bottom:20px; right:20px; }
   .hero-cta{display:flex; gap:14px; margin-top:40px; flex-wrap:wrap; align-items:center;}
   .btn{
     position:relative;
@@ -307,80 +345,7 @@
 
   /* ---------- Hero right: orbit ID card ---------- */
   .orbit-wrap{
-    position:relative;
-    width:100%;
-    max-width:400px;
-    aspect-ratio:1/1;
-    margin:0 auto;
-  }
-  .orbit-ring{
-    position:absolute;
-    inset:6%;
-    border:1px dashed var(--card-border);
-    border-radius:50%;
-    animation:spin 40s linear infinite;
-  }
-  @keyframes spin{to{transform:rotate(360deg);}}
-  .id-card{
-    position:absolute;
-    inset:16%;
-    border-radius:28px;
-    background:var(--card);
-    border:1px solid var(--card-border);
-    backdrop-filter:blur(16px);
-    -webkit-backdrop-filter:blur(16px);
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    gap:14px;
-    padding:24px;
-    text-align:center;
-    box-shadow:0 30px 60px rgba(0,0,0,0.35);
-    transition:transform 0.15s ease-out;
-  }
-  .id-photo{
-    width:112px; height:112px;
-    border-radius:50%;
-    overflow:hidden;
-    border:1px solid var(--card-border);
-    background:var(--bg-elevated);
-  }
-  .id-photo img{width:100%; height:100%; object-fit:cover; display:block;}
-  .id-tag{
-    font-family:'JetBrains Mono', monospace;
-    font-size:10.5px;
-    letter-spacing:0.1em;
-    color:var(--ink-soft);
-  }
-  .id-tag.accent{color:var(--accent);}
-  .orbit-chip{
-    position:absolute;
-    font-family:'JetBrains Mono', monospace;
-    font-size:11.5px;
-    font-weight:600;
-    padding:8px 14px;
-    border-radius:20px;
-    background:var(--card);
-    border:1px solid var(--card-border);
-    backdrop-filter:blur(10px);
-    color:var(--ink-soft);
-    animation:floatChip 7s ease-in-out infinite;
-  }
-  @keyframes floatChip{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-10px);}
-  }
-  .orbit-chip.c1{top:2%; left:8%; animation-delay:0s;}
-  .orbit-chip.c2{top:8%; right:0%; animation-delay:1.1s;}
-  .orbit-chip.c3{bottom:14%; left:-4%; animation-delay:2.2s;}
-  .orbit-chip.c4{bottom:2%; right:10%; animation-delay:0.6s;}
-  .orbit-chip.c5{top:44%; left:-8%; animation-delay:1.8s;}
-  .orbit-chip.c6{top:40%; right:-8%; animation-delay:2.6s;}
-
-  @media (prefers-reduced-motion: reduce){
-    .orbit-ring{animation:none;}
-    .orbit-chip{animation:none;}
+    display:none;
   }
 
   /* ---------- About ---------- */
@@ -419,80 +384,168 @@
   }
   .facet p{color:var(--ink-faint); font-size:13.5px; margin-top:8px;}
 
-  /* ---------- Skills constellation ---------- */
+  /* ---------- Skills constellation / Solar System ---------- */
   .constellation{
     position:relative;
-    margin-top:70px;
-    min-height:420px;
+    margin-top:80px;
+    height:500px;
     display:flex;
     align-items:center;
     justify-content:center;
   }
-  .constellation-core{
-    font-family:'JetBrains Mono', monospace;
-    font-size:12.5px;
-    font-weight:600;
-    letter-spacing:0.1em;
-    color:var(--ink);
-    background:var(--card);
-    border:1px solid var(--card-border);
-    border-radius:50%;
-    width:140px; height:140px;
-    display:flex; align-items:center; justify-content:center;
-    text-align:center;
-    z-index:2;
-    box-shadow:0 0 60px var(--accent-soft);
+  
+  .orbital-system{
+    position:relative;
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
   }
+  
+  .constellation-core{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:16px;
+    font-weight:700;
+    letter-spacing:0.05em;
+    color:#fff;
+    background:radial-gradient(circle at 30% 30%, var(--accent), rgba(76,127,255,0.8));
+    border:2px solid var(--accent);
+    border-radius:50%;
+    width:180px; height:180px;
+    display:flex; 
+    align-items:center; 
+    justify-content:center;
+    text-align:center;
+    position:absolute;
+    z-index:10;
+    box-shadow:0 0 80px var(--accent-soft), inset 0 0 40px rgba(76,127,255,0.3);
+    flex-direction:column;
+    gap:6px;
+  }
+  
+  .constellation-core .core-label{
+    font-size:12px;
+    opacity:0.9;
+  }
+  
+  .orbital-ring{
+    position:absolute;
+    border:1px dashed var(--card-border);
+    border-radius:50%;
+    opacity:0.5;
+  }
+  
+  .orbital-ring-1{ width:280px; height:280px; }
+  .orbital-ring-2{ width:420px; height:420px; }
+  
   .const-chip{
     position:absolute;
-    font-family:'JetBrains Mono', monospace;
-    font-size:13px;
-    font-weight:500;
-    padding:10px 18px;
-    border-radius:24px;
+    font-family:'Inter', sans-serif;
+    font-size:12px;
+    font-weight:600;
+    padding:12px 20px;
+    border-radius:50px;
     background:var(--card);
-    border:1px solid var(--card-border);
-    color:var(--ink-soft);
-    cursor:default;
-    transition:transform 0.25s ease, color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
-  }
-  .const-chip:hover{
-    transform:scale(1.12) translateY(-4px);
+    border:1.5px solid var(--card-border);
     color:var(--ink);
+    cursor:pointer;
+    transition:all 0.3s ease;
+    z-index:5;
+    white-space:nowrap;
+    box-shadow:0 4px 16px rgba(0,0,0,0.2);
+    animation:orbitSpin linear infinite;
+  }
+  
+  .const-chip:hover{
+    transform:scale(1.15);
+    color:#fff;
     border-color:var(--accent);
-    background:var(--accent-soft);
-    z-index:3;
+    background:var(--accent);
+    box-shadow:0 0 30px var(--accent-soft);
+    z-index:8;
+  }
+  
+  @keyframes orbitSpin {
+    from { transform:rotate(0deg); }
+    to { transform:rotate(360deg); }
+  }
+  
+  .const-chip.orbit-1 { animation-duration:20s; }
+  .const-chip.orbit-2 { animation-duration:25s; animation-direction:reverse; }
+  .const-chip.orbit-1:nth-child(n) { --orbit-angle:0deg; }
+  
+  @media (prefers-reduced-motion: reduce){
+    .const-chip{ animation:none; transform:none !important; }
   }
 
   /* ---------- Services ---------- */
-  .service-panel{
+  .services-intro{
     display:grid;
-    grid-template-columns:100px 1fr;
-    gap:30px;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
     align-items:start;
-    padding:38px 0;
-    border-top:1px solid var(--line);
-    transition:background 0.25s ease, padding-left 0.25s ease;
+    margin-top:26px;
+    margin-bottom:60px;
   }
-  .service-panel:last-child{border-bottom:1px solid var(--line);}
-  .service-panel:hover{background:var(--card); padding-left:16px;}
-  .service-num{
-    font-family:'JetBrains Mono', monospace;
+  .services-intro h3{
+    font-size:clamp(28px, 4vw, 44px);
+    line-height:1.1;
+  }
+  .services-intro p{
+    color:var(--ink-soft);
+    line-height:1.8;
+    font-size:15px;
+  }
+  .service-cards{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+  .service-card{
+    background:var(--card);
+    border:1px solid var(--card-border);
+    border-radius:16px;
+    padding:32px;
+    backdrop-filter:blur(10px);
+    transition:all 0.3s ease;
+  }
+  .service-card:hover{
+    background:rgba(76,127,255,0.08);
+    border-color:var(--accent);
+    transform:translateY(-4px);
+  }
+  .service-card-icon{
+    width:60px;
+    height:60px;
+    border-radius:12px;
+    background:var(--accent-soft);
+    border:1px solid var(--accent);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    margin-bottom:16px;
+  }
+  .service-card h4{
+    font-size:18px;
+    margin-bottom:10px;
+    color:var(--ink);
+  }
+  .service-card p{
+    color:var(--ink-soft);
     font-size:14px;
-    color:var(--accent);
-    padding-top:6px;
+    line-height:1.7;
+    margin:0;
   }
-  .service-panel h3{font-size:26px; margin-bottom:10px;}
-  .service-panel p{color:var(--ink-soft); font-size:15px; max-width:560px; margin:0;}
-  .service-lead h3{color:var(--accent);}
 
   /* ---------- Featured / cinematic projects ---------- */
   .cine-project{margin-top:0;}
   .work-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:26px;
-    margin-top:40px;
+    grid-template-columns:repeat(3, 1fr);
+    gap:24px;
+    margin-top:50px;
   }
   .cine-frame{
     border-radius:16px;
@@ -704,6 +757,25 @@
   .cursor-ring.viewing{width:76px; height:76px; border-color:var(--accent); background:var(--accent); color:#fff;}
   body.has-fine-pointer, body.has-fine-pointer a, body.has-fine-pointer button{cursor:none;}
 
+  /* Orbital animations */
+  @keyframes orbit1 {
+    from { 
+      transform: rotate(0deg) translateX(140px) rotate(0deg);
+    }
+    to { 
+      transform: rotate(360deg) translateX(140px) rotate(-360deg);
+    }
+  }
+  
+  @keyframes orbit2 {
+    from { 
+      transform: rotate(0deg) translateX(210px) rotate(0deg);
+    }
+    to { 
+      transform: rotate(-360deg) translateX(210px) rotate(360deg);
+    }
+  }
+
   /* ---------- Reveal ---------- */
   .reveal{opacity:0; transform:translateY(26px); transition:opacity 0.7s ease, transform 0.7s ease;}
   .reveal.revealed{opacity:1; transform:translateY(0);}
@@ -711,9 +783,9 @@
 
   /* ---------- Responsive ---------- */
   @media (max-width: 980px){
-    .work-grid{grid-template-columns:1fr;}
+    .work-grid{grid-template-columns:1fr 1fr;}
     .hero-grid{grid-template-columns:1fr; gap:70px;}
-    .orbit-wrap{max-width:300px;}
+    .hero-profile-frame{max-width:300px;}
     .about-grid{grid-template-columns:1fr; gap:30px;}
     .facet-row{grid-template-columns:1fr 1fr;}
     .stat-row{grid-template-columns:1fr;}
@@ -727,17 +799,16 @@
     section{padding:70px 0;}
     #home{padding:110px 0 40px;}
     .hero h1{font-size:clamp(36px, 8vw, 56px);} 
-    .orbit-wrap{display:block; max-width:260px; margin:0 auto;} /* keep ID card visible on small screens */
-    .orbit-ring, .orbit-chip{display:none;} /* hide decorative rings/chips */
-    .id-card{position:relative; inset:auto; width:100%; padding:18px; box-shadow:none; transform:none;}
-    .id-photo{width:96px; height:96px; margin:0 auto;}
+    .hero-profile-frame{width:260px; height:300px;}
+    .stat-badge{display:none;}
     .navbar{left:10px; right:10px; transform:none; width:auto; padding:8px 12px; top:12px;}
-    .bg-grid, .bg-glow, .bg-dots{display:none;} /* reduce visual noise and improve perf */
+    .bg-grid, .bg-glow, .bg-dots{display:none;}
     img{max-width:100%; height:auto; display:block;}
     .service-panel{grid-template-columns:1fr; gap:10px;}
     .cine-meta{flex-direction:column; align-items:flex-start;}
     .facet-row{grid-template-columns:1fr 1fr; gap:20px;}
     .htimeline{grid-template-columns:1fr 1fr;}
+    .work-grid{grid-template-columns:1fr;}
     .nav-links{display:none;}
     .nav-burger{display:flex;}
   }
@@ -777,37 +848,40 @@
   <!-- HERO -->
   <section id="home">
     <div class="hero-grid">
-      <div>
-        <p class="label hero-eyebrow reveal">Available for work</p>
-        <h1 class="reveal">NARGIS<br>AHMADI</h1>
-        <p class="role-line reveal"><span id="typedRole">Software Engineer</span><span class="cursor">&nbsp;</span></p>
+      <div class="hero-left">
+        <p class="label hero-eyebrow reveal">SOFTWARE DEVELOPER</p>
+        <h1 class="reveal">I Build Scalable<br><span class="accent-word">Web Solutions</span></h1>
+        <p class="role-line reveal">Hi, I'm Nargis Ahmadi — a passionate software developer specializing in building scalable, modern web applications with clean code and real impact.</p>
         <p class="hero-tagline reveal">
-          I design, redesign, and integrate AI into modern web applications —
-          full-stack builds and AI voice agents that work for your business.
+          I design, redesign, and integrate AI into modern web applications — full-stack builds and AI voice agents that work for your business.
         </p>
         <div class="hero-cta reveal">
-          <a class="btn primary" href="#work">View Work</a>
-          <a class="btn ghost" href="#contact">Contact Me</a>
+          <a class="btn primary" href="#work">View My Work →</a>
+          <a class="btn ghost" href="#contact">Get In Touch →</a>
         </div>
-        <div class="social-row reveal" style="margin-top:38px;">
-          <a class="social-dot" href="https://github.com/ahmadinargis250-rgb" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GH</a>
-          <a class="social-dot" href="https://www.linkedin.com/in/nargis-ahmadi-136806328" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">IN</a>
+        <div class="social-row reveal" style="margin-top:18px;">
+          <a class="social-dot" href="https://github.com/ahmadinargis250-rgb" target="_blank" rel="noopener noreferrer" title="GitHub">GH</a>
+          <a class="social-dot" href="https://www.linkedin.com/in/nargis-ahmadi-136806328" target="_blank" rel="noopener noreferrer" title="LinkedIn">IN</a>
+          <a class="social-dot" href="mailto:ahmadinargis250@gmail.com" title="Email" target="_blank">✉</a>
+          <a class="social-dot" href="https://wa.me/93795630215" target="_blank" rel="noopener noreferrer" title="WhatsApp">WA</a>
         </div>
       </div>
 
-      <div class="orbit-wrap reveal" id="orbitWrap">
-        <div class="orbit-ring"></div>
-        <div class="orbit-chip c1">React</div>
-        <div class="orbit-chip c2">Next.js</div>
-        <div class="orbit-chip c3">Node.js</div>
-        <div class="orbit-chip c4">MongoDB</div>
-        <div class="orbit-chip c5">AI</div>
-        <div class="orbit-chip c6">Git</div>
-        <div class="id-card" id="idCard">
-          <div class="id-photo"><img src="nargis-photo.jpg" alt="Nargis Ahmadi" loading="lazy"></div>
-          <div class="id-tag accent">SOFTWARE ENGINEER</div>
-          <div class="id-tag">FULL-STACK DEVELOPER</div>
-          <div class="id-tag">AVAILABLE FOR WORK</div>
+      <div class="hero-right reveal">
+        <div class="hero-profile-frame">
+          <img src="nargis-photo.jpg" alt="Nargis Ahmadi — Software Developer" loading="lazy">
+          <div class="stat-badge badge-1">
+            <div>3+</div>
+            <div>Experience</div>
+          </div>
+          <div class="stat-badge badge-2">
+            <div>25+</div>
+            <div>Projects Completed</div>
+          </div>
+          <div class="stat-badge badge-3">
+            <div>15+</div>
+            <div>Happy Clients</div>
+          </div>
         </div>
       </div>
     </div>
@@ -855,151 +929,119 @@
     <p class="label reveal">Skills</p>
     <h2 class="reveal" style="font-size:clamp(28px,4vw,44px); margin-top:20px;">A stack built for full-stack &amp; AI work</h2>
 
-    <div class="constellation reveal" id="constellation">
-      <div class="constellation-core">MY<br>STACK</div>
-      <div class="const-chip" style="top:8%; left:14%;">React</div>
-      <div class="const-chip" style="top:4%; right:12%;">Next.js</div>
-      <div class="const-chip" style="top:30%; left:2%;">JavaScript</div>
-      <div class="const-chip" style="top:26%; right:0%;">Node.js</div>
-      <div class="const-chip" style="bottom:30%; left:6%;">MongoDB</div>
-      <div class="const-chip" style="bottom:26%; right:4%;">Tailwind CSS</div>
-      <div class="const-chip" style="bottom:6%; left:20%;">C++</div>
-      <div class="const-chip" style="bottom:2%; right:22%;">Python</div>
-      <div class="const-chip" style="top:52%; left:32%;">Git</div>
-      <div class="const-chip" style="top:52%; right:30%;">GitHub</div>
+    <div class="constellation reveal">
+      <div class="orbital-system">
+        <div class="orbital-ring orbital-ring-1"></div>
+        <div class="orbital-ring orbital-ring-2"></div>
+        
+        <div class="constellation-core">
+          <div class="core-label">MY</div>
+          <div>TECH STACK</div>
+        </div>
+        
+        <!-- Inner orbit (20s) -->
+        <div class="const-chip orbit-1" style="width:140px; animation-name:orbit1;">React</div>
+        <div class="const-chip orbit-1" style="animation-name:orbit1; animation-delay:2.5s;">Next.js</div>
+        <div class="const-chip orbit-1" style="animation-name:orbit1; animation-delay:5s;">JavaScript</div>
+        <div class="const-chip orbit-1" style="animation-name:orbit1; animation-delay:7.5s;">Node.js</div>
+        <div class="const-chip orbit-1" style="animation-name:orbit1; animation-delay:10s;">MongoDB</div>
+        
+        <!-- Outer orbit (25s, reverse) -->
+        <div class="const-chip orbit-2" style="animation-name:orbit2;">Tailwind CSS</div>
+        <div class="const-chip orbit-2" style="animation-name:orbit2; animation-delay:3.125s;">C++</div>
+        <div class="const-chip orbit-2" style="animation-name:orbit2; animation-delay:6.25s;">Python</div>
+        <div class="const-chip orbit-2" style="animation-name:orbit2; animation-delay:9.375s;">Git</div>
+        <div class="const-chip orbit-2" style="animation-name:orbit2; animation-delay:12.5s;">GitHub</div>
+      </div>
     </div>
   </section>
 
   <!-- SERVICES -->
   <section id="services">
-    <p class="label reveal">Services</p>
-    <h2 class="reveal" style="font-size:clamp(28px,4vw,44px); margin-top:20px;">Have a project in mind?<br>Let's build it together.</h2>
+    <p class="label reveal">SKILLS & SERVICES</p>
+    <div class="services-intro">
+      <h3 class="reveal">Services & Expertise</h3>
+      <p class="reveal">I specialize in building products with clean code and real impact. Here's what I can help you with:</p>
+    </div>
 
-    <div style="margin-top:40px;">
-      <div class="service-panel service-lead reveal">
-        <span class="service-num">01</span>
-        <div>
-          <h3>AI Voice Agent</h3>
-          <p>A custom AI voice agent that answers calls, handles FAQs, and qualifies leads for your business — trained on your content and available 24/7.</p>
-        </div>
+    <div class="service-cards">
+      <div class="service-card reveal">
+        <div class="service-card-icon">🎯</div>
+        <h4>Frontend Development</h4>
+        <p>Building user-centered, responsive interfaces with React, Next.js, and modern CSS. Beautiful UIs with attention to detail.</p>
       </div>
-      <div class="service-panel reveal">
-        <span class="service-num">02</span>
-        <div>
-          <h3>Full-Stack Web Development</h3>
-          <p>Complete web applications built with React, Next.js, and Node.js — frontend to database.</p>
-        </div>
+      <div class="service-card reveal">
+        <div class="service-card-icon">⚙️</div>
+        <h4>Backend Development</h4>
+        <p>Creating robust server-side applications with Node.js, Express, and MongoDB. Scalable APIs and solid data models.</p>
       </div>
-      <div class="service-panel reveal">
-        <span class="service-num">03</span>
-        <div>
-          <h3>Website Redesign</h3>
-          <p>Modernizing existing sites with a cleaner UI, better performance, and AI features where useful.</p>
-        </div>
+      <div class="service-card reveal">
+        <div class="service-card-icon">🤖</div>
+        <h4>AI/Voice Agents</h4>
+        <p>Custom AI voice agents that handle calls, FAQs, and lead qualification — trained on your content, available 24/7.</p>
       </div>
     </div>
   </section>
 
   <!-- WORK -->
   <section id="work">
-    <p class="label reveal">Work</p>
-    <h2 class="reveal" style="font-size:clamp(28px,4vw,44px); margin-top:20px;">Selected projects</h2>
-
-    <div class="filter-row reveal">
-      <button class="filter-btn active" data-filter="all" type="button">All</button>
-      <button class="filter-btn" data-filter="frontend" type="button">Frontend</button>
-      <button class="filter-btn" data-filter="fullstack" type="button">Full-Stack</button>
-    </div>
+    <p class="label reveal">FEATURED PROJECTS</p>
+    <h2 class="reveal" style="font-size:clamp(28px,4vw,44px); margin-top:20px;">Selected Work</h2>
 
     <div class="work-grid">
-    <div class="cine-project reveal" data-category="fullstack">
-      <div class="cine-frame">
-        <div class="cine-chrome"><span></span><span></span><span></span></div>
-        <div class="cine-shot">
-          <img src="https://picsum.photos/seed/aspire-resort-nargis/1200/720" data-local="aspire-resort.svg" alt="Hotel resort interior used as a placeholder photo for the Aspire Resort project" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/1200x720?text=Aspire+Resort';">
-          <span class="client-badge">Client Project</span>
+      <div class="cine-project reveal" data-category="fullstack">
+        <div class="cine-frame">
+          <div class="cine-chrome"><span></span><span></span><span></span></div>
+          <div class="cine-shot">
+            <img src="https://picsum.photos/seed/aspire-resort-nargis/800/600" alt="Aspire Resort Project" loading="lazy" onerror="this.src='https://via.placeholder.com/800x600?text=Aspire+Resort';">
+            <span class="client-badge">Client Project</span>
+          </div>
         </div>
-      </div>
-      <div class="cine-meta">
-        <div>
-          <span class="label" style="margin-bottom:4px;">01 / Featured</span>
+        <div class="cine-meta" style="flex-direction:column;">
           <h3>Aspire Resort</h3>
-          <p class="desc">A full hotel platform built for a hotel client — room booking, an amenities showcase, and an admin dashboard connected to MongoDB Atlas.</p>
+          <p class="desc">Full hotel platform with room booking, amenities showcase, and admin dashboard.</p>
           <div class="cine-tags">
             <span class="tag">Next.js</span>
-            <span class="tag">MongoDB Atlas</span>
-            <span class="tag">Mongoose</span>
-            <span class="tag">Tailwind CSS</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">Tailwind</span>
           </div>
         </div>
-        <a class="cine-link" href="#">VIEW CODE →</a>
       </div>
-    </div>
 
-    <div class="cine-project reveal" data-category="frontend">
-      <div class="cine-frame">
-        <div class="cine-chrome"><span></span><span></span><span></span></div>
-        <div class="cine-shot">
-          <img src="https://picsum.photos/seed/guesthouse-nargis/1200/720" data-local="guesthouse.svg" alt="Guest house exterior used as a placeholder photo for the Guest House project" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/1200x720?text=Guest+House';">
-          <span class="client-badge">Client Project</span>
+      <div class="cine-project reveal" data-category="frontend">
+        <div class="cine-frame">
+          <div class="cine-chrome"><span></span><span></span><span></span></div>
+          <div class="cine-shot">
+            <img src="https://picsum.photos/seed/guesthouse-nargis/800/600" alt="Guest House Project" loading="lazy" onerror="this.src='https://via.placeholder.com/800x600?text=Guest+House';">
+            <span class="client-badge">Client Project</span>
+          </div>
         </div>
-      </div>
-      <div class="cine-meta">
-        <div>
-          <span class="label" style="margin-bottom:4px;">02</span>
+        <div class="cine-meta" style="flex-direction:column;">
           <h3>Guest House Website</h3>
-          <p class="desc">A multi-page site built for a guest house client — room listings, amenities, and a fully mobile-responsive layout.</p>
+          <p class="desc">Multi-page responsive site with room listings and amenities.</p>
           <div class="cine-tags">
             <span class="tag">React</span>
-            <span class="tag">React Router</span>
             <span class="tag">Tailwind CSS</span>
           </div>
         </div>
-        <a class="cine-link" href="#">VIEW CODE →</a>
       </div>
-    </div>
 
-    <div class="cine-project reveal" data-category="frontend">
-      <div class="cine-frame">
-        <div class="cine-chrome"><span></span><span></span><span></span></div>
-        <div class="cine-shot">
-          <img src="https://picsum.photos/seed/dreamtravel-nargis/1200/720" data-local="dreamtravel.svg" alt="Travel destination used as a placeholder photo for the Dream Travel project" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/1200x720?text=Dream+Travel';">
+      <div class="cine-project reveal" data-category="fullstack">
+        <div class="cine-frame">
+          <div class="cine-chrome"><span></span><span></span><span></span></div>
+          <div class="cine-shot">
+            <img src="https://picsum.photos/seed/dreamtravel-nargis/800/600" alt="Dream Travel Project" loading="lazy" onerror="this.src='https://via.placeholder.com/800x600?text=Dream+Travel';">
+          </div>
         </div>
-      </div>
-      <div class="cine-meta">
-        <div>
-          <span class="label" style="margin-bottom:4px;">03</span>
+        <div class="cine-meta" style="flex-direction:column;">
           <h3>Dream Travel</h3>
-          <p class="desc">A travel agency site with destination and trip pages, built to practice a real-world, multi-page structure.</p>
+          <p class="desc">Travel agency site with destination pages and real-world structure.</p>
           <div class="cine-tags">
             <span class="tag">Next.js</span>
             <span class="tag">React</span>
           </div>
         </div>
-        <a class="cine-link" href="#">VIEW CODE →</a>
       </div>
-    </div>
-
-    <div class="cine-project reveal" data-category="fullstack">
-      <div class="cine-frame">
-        <div class="cine-chrome"><span></span><span></span><span></span></div>
-        <div class="cine-shot">
-          <img src="https://picsum.photos/seed/swismax-nargis/1200/720" data-local="swismax.svg" alt="Office workspace used as a placeholder photo for the Swismax Solutions project" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/1200x720?text=Swismax+Solutions';">
-        </div>
-      </div>
-      <div class="cine-meta">
-        <div>
-          <span class="label" style="margin-bottom:4px;">04</span>
-          <h3>Swismax Solutions</h3>
-          <p class="desc">A digital agency site with a 3D carousel, animated sections, and a full portfolio page — built from scratch in HTML, CSS, and JavaScript.</p>
-          <div class="cine-tags">
-            <span class="tag">JavaScript</span>
-            <span class="tag">CSS 3D</span>
-          </div>
-        </div>
-        <a class="cine-link" href="#">VIEW CODE →</a>
-      </div>
-    </div>
     </div>
   </section>
 
@@ -1059,7 +1101,11 @@
     <div class="contact-panel reveal-group">
       <div class="contact-item reveal">
         <span class="label">Email</span>
-        <div class="value"><a href="mailto:ahmadinargis250@gmail.com">ahmadinargis250@gmail.com</a></div>
+        <div class="value"><a href="mailto:ahmadinargis250@gmail.com" target="_blank">ahmadinargis250@gmail.com</a></div>
+      </div>
+      <div class="contact-item reveal">
+        <span class="label">WhatsApp</span>
+        <div class="value"><a href="https://wa.me/93795630215" target="_blank" rel="noopener noreferrer">+93 795 630 215</a></div>
       </div>
       <div class="contact-item reveal">
         <span class="label">LinkedIn</span>
@@ -1068,6 +1114,14 @@
       <div class="contact-item reveal">
         <span class="label">GitHub</span>
         <div class="value"><a href="https://github.com/ahmadinargis250-rgb" target="_blank" rel="noopener noreferrer">ahmadinargis250-rgb</a></div>
+      </div>
+      <div class="contact-item reveal">
+        <span class="label">Location</span>
+        <div class="value">Lahore, Pakistan</div>
+      </div>
+      <div class="contact-item reveal">
+        <span class="label">Availability</span>
+        <div class="value">Open for opportunities</div>
       </div>
     </div>
   </section>
@@ -1120,23 +1174,25 @@
   document.documentElement.setAttribute('data-theme', 'dark');
 
   // ---------- Typed role ----------
-  const roles = ['Software Engineer', 'Full-Stack Developer', 'AI Integration'];
+  const roles = ['Software Engineer', 'Full-Stack Developer', 'AI Integration Specialist'];
   const typedEl = document.getElementById('typedRole');
-  let roleIndex = 0, charIndex = roles[0].length, deleting = false;
-  function typeLoop(){
-    const current = roles[roleIndex];
-    if(!deleting){
-      charIndex++;
-      if(charIndex > current.length){ deleting = true; charIndex = current.length; setTimeout(typeLoop, 1700); return; }
-    } else {
-      charIndex--;
-      if(charIndex < 0){ deleting = false; roleIndex = (roleIndex + 1) % roles.length; charIndex = 0; }
+  if(typedEl) {
+    let roleIndex = 0, charIndex = roles[0].length, deleting = false;
+    function typeLoop(){
+      const current = roles[roleIndex];
+      if(!deleting){
+        charIndex++;
+        if(charIndex > current.length){ deleting = true; charIndex = current.length; setTimeout(typeLoop, 1700); return; }
+      } else {
+        charIndex--;
+        if(charIndex < 0){ deleting = false; roleIndex = (roleIndex + 1) % roles.length; charIndex = 0; }
+      }
+      typedEl.textContent = roles[roleIndex].slice(0, charIndex);
+      setTimeout(typeLoop, deleting ? 35 : 60);
     }
-    typedEl.textContent = roles[roleIndex].slice(0, charIndex);
-    setTimeout(typeLoop, deleting ? 35 : 60);
-  }
-  if(typedEl && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    setTimeout(typeLoop, 1400);
+    if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      setTimeout(typeLoop, 1400);
+    }
   }
 
   // ---------- Magnetic / glow buttons ----------
@@ -1151,7 +1207,7 @@
   // ---------- Hero orbit parallax ----------
   const orbitWrap = document.getElementById('orbitWrap');
   const idCard = document.getElementById('idCard');
-  if(orbitWrap && window.matchMedia('(pointer: fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  if(orbitWrap && idCard && window.matchMedia('(pointer: fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
     document.getElementById('home').addEventListener('mousemove', (e) => {
       const rect = orbitWrap.getBoundingClientRect();
       const cx = rect.left + rect.width / 2;
@@ -1199,18 +1255,20 @@
 
   // ---------- Project filter ----------
   const filterBtns = document.querySelectorAll('.filter-btn');
-  const cineCards = document.querySelectorAll('#work .cine-project');
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.getAttribute('data-filter');
-      cineCards.forEach(card => {
-        const match = filter === 'all' || card.getAttribute('data-category') === filter;
-        card.classList.toggle('hidden', !match);
+  if(filterBtns.length > 0) {
+    const cineCards = document.querySelectorAll('#work .cine-project');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+        cineCards.forEach(card => {
+          const match = filter === 'all' || card.getAttribute('data-category') === filter;
+          card.classList.toggle('hidden', !match);
+        });
       });
     });
-  });
+  }
 
   // ---------- Prefer local images when available ----------
   (function preferLocalImages(){
